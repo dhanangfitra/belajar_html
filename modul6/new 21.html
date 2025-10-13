@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tabel CSS Background</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 40%;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #cce5ff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        caption {
+            caption-side: top;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>Tabel Properti Background CSS</caption>
+        <tr>
+            <th>Properties</th>
+            <th>Value</th>
+            <th>Keterangan</th>
+        </tr>
+        <tr>
+            <td>background-image</td>
+            <td>url</td>
+            <td>Alamat gambar yang dituju</td>
+        </tr>
+        <tr>
+            <td rowspan="4">background-repeat</td>
+            <td>repeat</td>
+            <td>Diulang dalam halaman</td>
+        </tr>
+        <tr>
+            <td>repeat-x</td>
+            <td>Diulang sumbu x</td>
+        </tr>
+        <tr>
+            <td>repeat-y</td>
+            <td>Diulang sumbu y</td>
+        </tr>
+        <tr>
+            <td>no-repeat</td>
+            <td>Tampil 1 gambar</td>
+        </tr>
+        <tr>
+            <td rowspan="10">background-position</td>
+            <td>top left</td>
+            <td>Atas kiri halaman</td>
+        </tr>
+        <tr>
+            <td>top center</td>
+            <td>Atas tengah halaman</td>
+        </tr>
+        <tr>
+            <td>top right</td>
+            <td>Atas kanan halaman</td>
+        </tr>
+        <tr>
+            <td>center left</td>
+            <td>Tengah kiri halaman</td>
+        </tr>
+        <tr>
+            <td>center center</td>
+            <td>Pusat halaman</td>
+        </tr>
+        <tr>
+            <td>center right</td>
+            <td>Tengah kanan halaman</td>
+        </tr>
+        <tr>
+            <td>bottom left</td>
+            <td>Bawah kiri halaman</td>
+        </tr>
+        <tr>
+            <td>bottom center</td>
+            <td>Bawah tengah halaman</td>
+        </tr>
+        <tr>
+            <td>bottom right</td>
+            <td>Bawah kanan halaman</td>
+        </tr>
+        <tr>
+            <td>x-% y-% / x-pos y-pos</td>
+            <td>Pakai nilai %</td>
+        </tr>
+    </table>
+</body>
+
+</html>

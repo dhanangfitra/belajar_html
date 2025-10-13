@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Formulir Pendaftaran</title>
+</head>
+<body>
+   <h2 align="center">Formulir Pendaftaran</h2>
+   <form method="post" action="">
+      <table align="center" cellpadding="5" cellspacing="0" border="0">
+         <tr>
+            <td>Nama</td>
+            <td>:</td>
+            <td><input type="text" name="nama" size="30"></td>
+         </tr>
+         <tr>
+            <td>Password</td>
+            <td>:</td>
+            <td><input type="password" name="password" size="30"></td>
+         </tr>
+         <tr>
+            <td>Tanggal Lahir</td>
+            <td>:</td>
+            <td>
+               <input type="text" name="tgl" size="2"> /
+               <input type="text" name="bln" size="2"> /
+               <input type="text" name="thn" size="4"> (hh/bb/tttt)
+            </td>
+         </tr>
+         <tr>
+            <td>Jenis Kelamin</td>
+            <td>:</td>
+            <td>
+               <input type="radio" name="jk" value="Laki-Laki"> Laki-Laki
+               <input type="radio" name="jk" value="Perempuan"> Perempuan
+            </td>
+         </tr>
+         <tr>
+            <td>Jurusan</td>
+            <td>:</td>
+            <td>
+               <select name="jurusan">
+                  <option value="RPL">RPL</option>
+                  <option value="TKJ">TKJ</option>
+                  <option value="MM">Multimedia</option>
+                  <option value="DKV">DKV</option>
+               </select>
+            </td>
+         </tr>
+         <tr>
+            <td>Hoby</td>
+            <td>:</td>
+            <td>
+               <input type="checkbox" name="hobi" value="Football"> Football
+               <input type="checkbox" name="hobi" value="Traveling"> Traveling
+               <input type="checkbox" name="hobi" value="Blogging"> Blogging
+               <br>
+               <input type="checkbox" name="hobi" value="Music"> Music
+               <input type="checkbox" name="hobi" value="Adventure"> Adventure
+               <input type="checkbox" name="hobi" value="Lainnya"> Lainnya
+            </td>
+         </tr>
+         <tr>
+            <td>Alamat</td>
+            <td>:</td>
+            <td><textarea name="alamat" cols="40" rows="5"></textarea></td>
+         </tr>
+         <tr>
+            <td colspan="3" align="center">
+               <input type="submit" value="Kirim">
+			   <input type="reset" name="var5" value="Reset">
+            </td>
+         </tr>
+      </table>
+   </form>
+</body>
+</html>
