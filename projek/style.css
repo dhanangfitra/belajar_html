@@ -1,0 +1,48 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Wadah utama pop-up */
+.popup-container {
+    display: none; /* Menyembunyikan pop-up secara default */
+    position: fixed; /* Memastikan pop-up tetap di tempatnya saat menggulir */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 40, 67, 0.5); /* Lapisan latar belakang gelap */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Kotak konten pop-up */
+.popup-content {
+    background-color: rgb(151, 222, 248);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Tombol tutup pop-up */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #888;
+}
+
+/* Memastikan pop-up muncul di atas elemen lain */
+.popup-container.active {
+    display: flex;
+}
