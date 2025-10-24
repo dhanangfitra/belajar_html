@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Mengatur semua elemen agar box-sizing menggunakan border-box (memudahkan pengaturan ukuran) */
+        * {
+            box-sizing: border-box
+        }
+
+        /* Mengatur font dan margin default halaman */
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0
+        }
+
+        /* Semua elemen dengan class mySlides disembunyikan secara default */
+        .mySlides {
+            display: none
+        }
+
+        /* Agar gambar sejajar dengan teks di tengah */
+        img {
+            vertical-align: middle;
+        }
+
+        /* ----------------- CONTAINER SLIDESHOW ------------------ */
+        .slideshow-container {
+            max-width: 1000px;
+            /* Lebar maksimum slideshow */
+            position: relative;
+            /* Untuk menempatkan tombol prev/next secara absolut */
+            margin: auto;
+            /* Pusatkan container di halaman */
+        }
+
+        /* ----------------- TOMBOL PREV & NEXT ------------------ */
+        .prev,
+        .next {
+            cursor: pointer;
+            /* Ubah kursor jadi tangan saat diarahkan */
+            position: absolute;
+            /* Letak absolut dalam container */
+            top: 50%;
+            /* Posisikan di tengah vertikal */
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            /* Agar tombol benar-benar di tengah */
+            color: white;
+            /* Warna teks tombol */
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            /* Efek transisi halus saat hover */
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            /* Agar teks tidak bisa diseleksi */
+        }
+
+        /* Tombol "next" berada di sisi kanan */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* Efek hover tombol: latar belakang hitam semi-transparan */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* ----------------- TEKS KETERANGAN (CAPTION) ------------------ */
+        .text {
+            color: #f2f2f2;
+            /* Warna teks putih */
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            /* Diletakkan di bawah gambar */
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ----------------- NOMOR SLIDE (misal: 1/3) ------------------ */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* ----------------- TITIK NAVIGASI (DOTS) ------------------ */
+        .dot {
+            cursor: pointer;
+            /* Dapat diklik */
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            /* Warna default abu-abu */
+            border-radius: 50%;
+            /* Bentuk bulat */
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        /* Warna titik aktif atau saat dihover */
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        /* ----------------- ANIMASI FADE ------------------ */
+        .fade {
+            animation-name: fade;
+            /* Gunakan animasi bernama 'fade' */
+            animation-duration: 1.5s;
+            /* Durasi animasi 1,5 detik */
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* ----------------- RESPONSIVE ------------------ */
+        @media only screen and (max-width: 300px) {
+
+            .prev,
+            .next,
+            .text {
+                font-size: 11px
+            }
+
+            /* Teks dan tombol lebih kecil di layar kecil */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CONTAINER UTAMA SLIDESHOW -->
+    <div class="slideshow-container">
+
+        <!-- SLIDE 1 -->
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div> <!-- Nomor slide -->
+            <img src="img/img_nature_wide.jpg" style="width:100%"> <!-- Gambar -->
+            <div class="text">Caption Text</div> <!-- Teks keterangan -->
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="img/img_snow_wide.jpg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="img/img_mountains_wide.jpg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+
+        <!-- TOMBOL NAVIGASI -->
+        <a class="prev" onclick="plusSlides(-1)">
+            < </a> <!-- Tombol sebelumnya -->
+                <a class="next" onclick="plusSlides(1)">></a> <!-- Tombol berikutnya -->
+
+    </div>
+
+    <br>
+
+    <!-- TITIK NAVIGASI DI BAWAH SLIDES -->
+    <div style="text-align:center">
+        <!-- Setiap titik mewakili satu slide -->
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <script>
+        /* slideIndex digunakan untuk menentukan slide aktif saat ini */
+        let slideIndex = 1;
+        showSlides(slideIndex); // Menampilkan slide pertama saat halaman dimuat
+
+        /* Fungsi untuk mengubah slide dengan tombol Next/Prev */
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        /* Fungsi untuk menampilkan slide tertentu saat titik diklik */
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        /* Fungsi utama untuk menampilkan slide sesuai indeks */
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides"); // Semua elemen slide
+            let dots = document.getElementsByClassName("dot");        // Semua titik indikator
+
+            // Jika indeks lebih besar dari jumlah slide, kembali ke slide pertama
+            if (n > slides.length) { slideIndex = 1 }
+            // Jika indeks kurang dari 1, kembali ke slide terakhir
+            if (n < 1) { slideIndex = slides.length }
+
+            // Sembunyikan semua slide
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Hapus status aktif dari semua titik
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            // Tampilkan slide aktif dan beri titik status aktif
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+</body>
+
+</html>
