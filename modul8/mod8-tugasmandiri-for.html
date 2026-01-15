@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Data Nama Siswa</title>
+</head>
+
+<body>
+
+    <h2>Data Nama Siswa</h2>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>No</th>
+            <th>Nama Siswa</th>
+        </tr>
+        <script>
+            // Array nama siswa
+            let namaSiswa = ["Andi", "Budi", "Citra", "Dewi"];
+
+            // Perulangan for
+            for (let i = 0; i < namaSiswa.length; i++) {
+                document.write("<tr>");
+                document.write("<td>" + (i + 1) + "</td>");
+                document.write("<td>" + namaSiswa[i] + "</td>");
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+
+</body>
+
+</html>

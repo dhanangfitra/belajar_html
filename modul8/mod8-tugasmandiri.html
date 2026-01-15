@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tabel Data Siswa</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 40%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #000;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Data Nama Siswa</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama Siswa</th>
+            </tr>
+        </thead>
+        <tbody id="dataSiswa">
+            <!-- Data dari array -->
+        </tbody>
+    </table>
+
+    <script>
+        // Array nama siswa
+        let siswa = ["Andi", "Budi", "Citra", "Dewi"];
+
+        // Menampilkan array ke tabel menggunakan perulangan
+        let tabel = document.getElementById("dataSiswa");
+
+        for (let i = 0; i < siswa.length; i++) {
+            tabel.innerHTML += `
+                <tr>
+                    <td>${i + 1}</td>
+                    <td>${siswa[i]}</td>
+                </tr>
+            `;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Data Nama Siswa</title>
+</head>
+
+<body>
+
+    <h2>Data Nama Siswa RPL</h2>
+    <h4>SMK Negeri 4 Malang</h4>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>No</th>
+            <th>NIS</th>
+            <th>Nama Siswa</th>
+            <th>Kelas</th>
+        </tr>
+
+        <script>
+            // Array data siswa (objek)
+            let siswa = [
+                { nis: "1001", nama: "Andi", kelas: "X RPL A" },
+                { nis: "1002", nama: "Budi", kelas: "X RPL B" },
+                { nis: "1003", nama: "Citra", kelas: "X RPL C" },
+                { nis: "1004", nama: "Dewi", kelas: "XI RPL A" }
+            ];
+
+            // Perulangan forEach
+
+            siswa.forEach((data, index) => {
+                document.write("<tr>");
+                document.write("<td>" + (index + 1) + "</td>");
+                document.write("<td>" + data.nis + "</td>");
+                document.write("<td>" + data.nama + "</td>");
+                document.write("<td>" + data.kelas + "</td>");
+                document.write("</tr>");
+            });
+
+            /*
+             siswa.forEach((item, index) => {
+                 console.log(
+                     index + 1 + ". " +
+                     "NIS: " + item.nis +
+                     ", Nama: " + item.nama
+                 );
+             });
+               */
+
+        </script>
+
+    </table>
+
+</body>
+
+</html>

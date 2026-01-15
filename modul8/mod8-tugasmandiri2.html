@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tabel Data Siswa</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #000;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Data Siswa</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>NIS</th>
+                <th>Nama Siswa</th>
+            </tr>
+        </thead>
+        <tbody id="dataSiswa">
+            <!-- Data dari array -->
+        </tbody>
+    </table>
+
+    <script>
+        // Array NIS dan Nama Siswa
+        let nis = ["1001", "1002", "1003", "1004"];
+        let siswa = ["Andi", "Budi", "Citra", "Dewi"];
+
+        let tabel = document.getElementById("dataSiswa");
+
+        // Perulangan untuk menampilkan data
+        for (let i = 0; i < siswa.length; i++) {
+            tabel.innerHTML += `
+                <tr>
+                    <td>${i + 1}</td>
+                    <td>${nis[i]}</td>
+                    <td>${siswa[i]}</td>
+                </tr>
+            `;
+        }
+    </script>
+
+</body>
+
+</html>
