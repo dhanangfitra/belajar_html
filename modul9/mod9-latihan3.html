@@ -4,20 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modul 8-Latihan 4</title>
+    <title>Modul 8 - Latihan 3</title>
 </head>
 
 <body>
+
     <script>
         let buah = ["Apel", "Jeruk", "Mangga", "Pisang"];
-        document.write("<h3>Daftar Buah : </h3>");
+
+        document.write("<h3>Daftar Buah :</h3>");
         document.write("<ol>");
-        // menggunakan perulangan untuk mencetak isi array tanpa index
-        for (let item of buah) {
-            document.write(item + "<br>");
-        }
+
+        // menggunakan perulangan untuk mencetak semua isi array
+        // menggunakan forEach
+        buah.forEach(function (item, index) {
+            document.write(index + 1 + ". " + item + "<br>");
+        });
+
         document.write("</ol>");
     </script>
+
 </body>
 
 </html>
